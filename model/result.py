@@ -1,16 +1,6 @@
 from dataclasses import dataclass
 from typing import Any
 
-@dataclass
-class ClicksByDay:
-    x: int
-    y: int
-
-    @staticmethod
-    def from_dict(obj: Any) -> 'ClicksByDay':
-        _x = int(obj.get("x"))
-        _y = int(obj.get("y"))
-        return ClicksByDay(_x, _y)
 
 @dataclass
 class Result:
@@ -51,5 +41,6 @@ class Result:
         _attachment = str(obj.get("attachment"))
         _phishDomain = str(obj.get("phishDomain"))
         _clicksByDay = dict(obj.get("clicksByDay"))
-        return Result(_title, _date, _category, _groups, _recipients, _deliveries, _clicks, _attachmentOpened, _dataEntered, _otherFailures, _pabReported, _bounces, _frm, _subject, _attachment, _phishDomain, _clicksByDay)
-
+        return Result(_title, _date, _category, _groups, _recipients, _deliveries, _clicks, _attachmentOpened,
+                      _dataEntered, _otherFailures, _pabReported, _bounces, _frm, _subject, _attachment, _phishDomain,
+                      _clicksByDay)

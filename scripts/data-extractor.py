@@ -5,7 +5,6 @@ import os
 
 results_dir = 'campaign-results'
 
-
 def main():
     for results_file in reversed(os.listdir(results_dir)):
         results_file_path = os.path.join(results_dir, results_file)
